@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>특별 성향 분석 센터</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+
+    <section id="survey-screen" class="panel">
+      <p class="eyebrow">OFFICIAL PERSONALITY RESEARCH</p>
+      <h1>성향 분석 설문조사</h1>
+      <p class="intro">정확한 분석을 위해 질문에 답해 주세요.</p>
+
+      <div class="progress-info" id="progress-text">질문 1 / 5</div>
+      <div class="progress-track">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+
+      <form id="survey-form" novalidate>
+
+        <div class="step">
+          <h2>먼저, 이름이 무엇인가요?</h2>
+          <p>본명을 입력해 주세요.</p>
+          <input id="name" type="text" placeholder="이름 입력" autocomplete="off">
+        </div>
+
+        <div class="step hidden">
+          <h2>생년월일을 알려주세요.</h2>
+          <p>태어난 날짜를 선택해 주세요.</p>
+          <input id="birthday" type="date">
+        </div>
+
+        <div class="step hidden">
+          <h2>혈액형은 무엇인가요?</h2>
+          <p>정확한 분석을 위해 선택해 주세요.</p>
+          <select id="blood">
+            <option value="">선택해 주세요</option>
+            <option value="A형">A형</option>
+            <option value="B형">B형</option>
+            <option value="O형">O형</option>
+            <option value="AB형">AB형</option>
+            <option value="모름">모름</option>
+          </select>
+        </div>
+
+        <div class="step hidden">
+          <h2>당신의 MBTI는?</h2>
+          <p>자신의 성격 유형을 선택해 주세요.</p>
+          <select id="mbti">
+            <option value="">선택해 주세요</option>
+            <option>ISTJ</option><option>ISFJ</option>
+            <option>INFJ</option><option>INTJ</option>
+            <option>ISTP</option><option>ISFP</option>
+            <option>INFP</option><option>INTP</option>
+            <option>ESTP</option><option>ESFP</option>
+            <option>ENFP</option><option>ENTP</option>
+            <option>ESTJ</option><option>ESFJ</option>
+            <option>ENFJ</option><option>ENTJ</option>
+            <option>모름</option>
+          </select>
+        </div>
+
+        <div class="step hidden">
+          <h2>당신이 가장 닮은 것은?</h2>
+          <p>제출 완료 버튼을 누르면 테스트가 시작됩니다.</p>
+          <select id="similarity">
+            <option value="">하나를 선택해 주세요</option>
+            <option value="doctorwho">1. 닥터후</option>
+            <option value="dubai">2. 두바이쫀득쿠키</option>
+            <option value="pig">3. 돼지</option>
+            <option value="hanjeongseon">4. 한정선</option>
+          </select>
+
+          <div id="error-box" class="error-box hidden" role="alert">
+            <div class="big-x">✖</div>
+            <h3>잘못된 응답입니다.</h3>
+            <p>당신의 정체성을 다시 생각해 주세요.</p>
+            <button id="retry-button" type="button" class="secondary-button">
+              다시 선택하기
+            </button>
+          </div>
+        </div>
+
+        <div class="step-buttons">
+          <button id="prev-button" type="button" class="secondary-button" disabled>
+            ← 이전
+          </button>
+          <button id="next-button" type="button" class="primary-button">
+            다음 →
+          </button>
+          <button id="submit-button" type="submit" class="primary-button hidden">
+            제출 완료 🎂
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <section id="home-screen" class="panel hidden">
+      <p class="eyebrow">YOU FINALLY MADE IT</p>
+      <div class="confetti">🎉 🎈 🎉</div>
+      <h1>HAPPY BIRTHDAY!</h1>
+      <h2 id="friend-title">오늘의 주인공!</h2>
+      <div class="cake">🎂</div>
+      <p class="intro">
+        생일 진심으로 축하한다!<br>
+        오늘 하루 세상에서 제일 행복하길 💖
+      </p>
+
+      <button id="music-button" class="secondary-button music-button">
+        ♫ 생일축하 노래 재생
+      </button>
+      <p class="music-note">음악 파일은 나중에 추가할 수 있어!</p>
+
+      <div class="menu-grid">
+        <button class="menu-button" data-page="letter">
+          💌<span>생일축하 편지</span>
+        </button>
+        <button class="menu-button" data-page="games">
+          🎁<span>상품 얻기</span>
+        </button>
+        <button class="menu-button" data-page="animals">
+          ❓<span>???</span>
+        </button>
+      </div>
+    </section>
+
+    <section id="sub-screen" class="panel hidden">
+      <button id="back-button" class="back-button">← 메인으로</button>
+      <div id="sub-content"></div>
+    </section>
+
+    <footer>Made with Kaist</footer>
+  </main>
+ <div id="achievement-container" style="display: none;"></div>
+</body>
+</html>

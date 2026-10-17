@@ -1,0 +1,416 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 30px 16px;
+  font-family: "Malgun Gothic", sans-serif;
+  color: #493752;
+  background: linear-gradient(135deg, #ffe3ed, #e9e4ff, #fff0d5);
+}
+
+button, input, select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  transition: transform 0.15s, filter 0.15s;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  filter: brightness(1.03);
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.container {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.panel {
+  width: 100%;
+  padding: 34px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 26px;
+  box-shadow: 0 18px 55px rgba(76, 47, 91, 0.13);
+  animation: appear 0.3s ease;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #9d78b4;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+h1 {
+  margin: 12px 0 16px;
+  font-size: clamp(25px, 5vw, 36px);
+  line-height: 1.35;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+h2 {
+  margin: 12px 0;
+  font-size: clamp(21px, 4vw, 27px);
+  line-height: 1.5;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+p {
+  line-height: 1.8;
+}
+
+.intro {
+  margin: 10px 0 26px;
+  color: #827287;
+  text-align: center;
+}
+
+.progress-info {
+  margin-bottom: 9px;
+  color: #8d6da2;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.progress-track {
+  width: 100%;
+  height: 8px;
+  margin-bottom: 28px;
+  overflow: hidden;
+  background: #eee6f4;
+  border-radius: 99px;
+}
+
+.progress-fill {
+  width: 20%;
+  height: 100%;
+  background: linear-gradient(90deg, #b18bdb, #f49bc1);
+  border-radius: 99px;
+  transition: width 0.3s ease;
+}
+
+.step {
+  width: 100%;
+  min-height: 215px;
+  animation: appear 0.25s ease;
+}
+
+.step > p {
+  margin: 12px 0 24px;
+  color: #887b8c;
+  text-align: center;
+}
+
+input, select {
+  display: block;
+  width: 100%;
+  min-height: 50px;
+  padding: 12px 14px;
+  color: #493752;
+  background: #fff;
+  border: 1px solid #dfd3e8;
+  border-radius: 12px;
+  outline: none;
+}
+
+input:focus, select:focus {
+  border-color: #b18bdb;
+  box-shadow: 0 0 0 3px rgba(177, 139, 219, 0.16);
+}
+
+.step-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.primary-button, .secondary-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 49px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 13px;
+  font-weight: bold;
+}
+
+.step-buttons button {
+  flex: 1;
+  min-width: 0;
+}
+
+.primary-button {
+  color: #fff;
+  background: #9870bd;
+}
+
+.secondary-button {
+  color: #684b80;
+  background: #f1e7fa;
+}
+
+.error-box {
+  margin-top: 22px;
+  padding: 18px;
+  background: #fff0f2;
+  border: 2px dashed #ff9aab;
+  border-radius: 18px;
+  text-align: center;
+  animation: appear 0.25s ease;
+}
+
+.error-box h3 {
+  margin: 8px 0;
+  color: #d83c58;
+  font-size: 20px;
+}
+
+.error-box p {
+  color: #8e5261;
+}
+
+.big-x {
+  color: #e52f4f;
+  font-size: 66px;
+  font-weight: bold;
+}
+
+.error-box .secondary-button {
+  width: 100%;
+}
+
+.confetti {
+  margin: 20px 0;
+  font-size: 38px;
+  text-align: center;
+}
+
+.cake {
+  margin: 20px 0;
+  font-size: 100px;
+  text-align: center;
+  animation: bounce 1.5s ease-in-out infinite;
+}
+
+.music-button {
+  width: 100%;
+}
+
+.music-note {
+  margin: 8px 0 0;
+  color: #96869d;
+  font-size: 12px;
+  text-align: center;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.menu-button {
+  min-width: 0;
+  min-height: 110px;
+  padding: 12px 4px;
+  color: #674b7e;
+  background: #fcf7ff;
+  border: 1px solid #eadcf5;
+  border-radius: 17px;
+  font-size: 30px;
+}
+
+.menu-button span {
+  display: block;
+  margin-top: 9px;
+  font-size: 13px;
+  font-weight: bold;
+  overflow-wrap: anywhere;
+}
+
+.back-button {
+  min-height: 42px;
+  padding: 10px 14px;
+  color: #674b7e;
+  background: #f1e7fa;
+  border: none;
+  border-radius: 10px;
+}
+
+#sub-content {
+  margin-top: 20px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+#sub-content .secondary-button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+#game-area {
+  margin-top: 18px;
+}
+
+footer {
+  padding: 22px 0 8px;
+  color: #897b91;
+  font-size: 12px;
+  text-align: center;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 14px 9px;
+  }
+
+  .panel {
+    padding: 25px 18px;
+    border-radius: 21px;
+  }
+
+  .step {
+    min-height: 205px;
+  }
+
+  .menu-grid {
+    gap: 7px;
+  }
+
+  .menu-button {
+    min-height: 92px;
+    font-size: 26px;
+  }
+
+  .menu-button span {
+    font-size: 11px;
+  }
+
+  .step-buttons {
+    gap: 8px;
+  }
+
+  .step-buttons button {
+    padding: 10px 7px;
+    font-size: 14px;
+  }
+}
+/* 업적 창 배경 */
+#achievement-container {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* 업적 창 */
+.achievement-toast {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 380px;
+  padding: 30px 24px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(145deg, #292343, #514078);
+  border: 2px solid #d3b8ff;
+  border-radius: 24px;
+  box-shadow: 0 0 35px #9c76ff66;
+  animation: achievement-in 0.35s ease;
+}
+
+/* 업적 아이콘 */
+.achievement-icon {
+  font-size: 56px;
+  margin-bottom: 12px;
+}
+
+/* 업적 제목 */
+.achievement-toast h3 {
+  margin: 0 0 12px;
+  color: #ffe28a;
+  font-size: 24px;
+}
+
+/* 업적 설명 */
+.achievement-toast p {
+  margin: 0 0 24px;
+  line-height: 1.6;
+}
+
+/* 확인 버튼 */
+.achievement-confirm {
+  padding: 12px 32px;
+  border: none;
+  border-radius: 12px;
+  background: #ffe28a;
+  color: #292343;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.achievement-confirm:hover {
+  transform: scale(1.05);
+  background: #fff0b8;
+}
+
+/* 등장 애니메이션 */
+@keyframes achievement-in {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
